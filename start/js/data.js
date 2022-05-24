@@ -117,25 +117,26 @@ const qnaList = [
    {
     q: '15. 내가 추구하는 연애관은? ',
     a: [
-      { answer: 'a. 각자 할 것 하며, 평안하고 안정적인 연애가 좋다.', type: ['cow', 'dragon', 'chick', 'pig' ] },
-      { answer: 'b. 보고싶을 때 보고, 데이트도 많이 하고 꽁냥꽁냥하는 연애가 좋아.', type: ['sheep', 'mouse', 'rabbit', 'horse', 'dog'] },
-      { answer: 'c. 연애는 마음가는대로! 불타오르는 연애가 최고지.', type: ['tiger', 'snake', 'monkey' ] },
+      { answer: '1. 각자 할 것 하며, 평안하고 안정적인 연애가 좋다.', type: ['cow', 'dragon', 'chick', 'pig' ] },
+      { answer: '2. 보고싶을 때 보고, 데이트도 많이 하고 꽁냥꽁냥하는 연애가 좋아.', type: ['sheep', 'mouse', 'rabbit', 'horse', 'dog'] },
+      { answer: '3. 연애는 마음가는대로! 불타오르는 연애가 최고지.', type: ['tiger', 'snake', 'monkey' ] },
     ]
   },
    {
-    q: '16. 내가 추구하는 연애관은? ',
+    q: '16. 얼굴에 주름이 있나요? ',
     a: [
-      { answer: 'a. 각자 할 것 하며, 평안하고 안정적인 연애가 좋다.', type: ['cow', 'dragon', 'chick', 'pig' ] },
-      { answer: 'b. 보고싶을 때 보고, 데이트도 많이 하고 꽁냥꽁냥하는 연애가 좋아.', type: ['sheep', 'mouse', 'rabbit', 'horse', 'dog'] },
-      { answer: 'c. 연애는 마음가는대로! 불타오르는 연애가 최고지.', type: ['tiger', 'snake', 'monkey' ] },
+      { answer: '1. 없다 웃거나 찡그리거나 눈썹을 치켜올릴 경우에도 없다.', type: ['cow', 'dragon', 'chick', 'pig' ] },
+      { answer: '2. 웃거나 찡그리거나 눈썹을 치켜올릴때에 없다.', type: ['sheep', 'mouse', 'rabbit', 'horse', 'dog'] },
+      { answer: '3. 있다 얼굴을 움직이거나 움직임이 없는 안정된 상태에서도 약간 있다', type: ['tiger', 'snake', 'monkey' ] },
+      { answer: '4. 웃거나 찡그리거나 눈썹을 치켜올리지 않아도 주름이 있다', type: ['tiger', 'snake', 'monkey' ] }
     ]
   },
   {
-    q: '17. 내가 추구하는 연애관은? ',
+    q: '17. 어머니의 얼굴피부는 얼마나 나이들어 보이나요/보였나요? ',
     a: [
-      { answer: 'a. 각자 할 것 하며, 평안하고 안정적인 연애가 좋다.', type: ['cow', 'dragon', 'chick', 'pig' ] },
-      { answer: 'b. 보고싶을 때 보고, 데이트도 많이 하고 꽁냥꽁냥하는 연애가 좋아.', type: ['sheep', 'mouse', 'rabbit', 'horse', 'dog'] },
-      { answer: 'c. 연애는 마음가는대로! 불타오르는 연애가 최고지.', type: ['tiger', 'snake', 'monkey' ] },
+      { answer: '1. 나이보다 5~10년 젊어보인다/보였다.', type: ['cow', 'dragon', 'chick', 'pig' ] },
+      { answer: '2. 나이대로 보인다/보였다', type: ['sheep', 'mouse', 'rabbit', 'horse', 'dog'] },
+      { answer: '3. 나이보다 5년더 젊어보인다', type: ['tiger', 'snake', 'monkey' ] },
     ]
   },
   {
