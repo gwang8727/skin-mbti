@@ -1,6 +1,6 @@
 const qnaList = [
   {
-    q: '1. 이성 사이에 진정한 친구는 있다, 없다?',
+    q: '1. 이성 사이에 진정한 친구는 있다, 없다?????',
     a: [
       { answer: 'a. 이성 사이에 친구가 어딨어? 절대 없어', type: ['cow', 'tiger', 'dragon', 'chick'] },
       { answer: 'b. 친구 있지, 절대 이성으로만 안 보일뿐', type: ['mouse', 'rabbit', 'horse', 'snake', 'dog', 'monkey'] },
