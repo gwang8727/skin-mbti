@@ -129,6 +129,54 @@ const qnaList = [
       { answer: 'b. 보고싶을 때 보고, 데이트도 많이 하고 꽁냥꽁냥하는 연애가 좋아.', type: ['sheep', 'mouse', 'rabbit', 'horse', 'dog'] },
       { answer: 'c. 연애는 마음가는대로! 불타오르는 연애가 최고지.', type: ['tiger', 'snake', 'monkey' ] },
     ]
+  },
+  {
+    q: '17. 내가 추구하는 연애관은? ',
+    a: [
+      { answer: 'a. 각자 할 것 하며, 평안하고 안정적인 연애가 좋다.', type: ['cow', 'dragon', 'chick', 'pig' ] },
+      { answer: 'b. 보고싶을 때 보고, 데이트도 많이 하고 꽁냥꽁냥하는 연애가 좋아.', type: ['sheep', 'mouse', 'rabbit', 'horse', 'dog'] },
+      { answer: 'c. 연애는 마음가는대로! 불타오르는 연애가 최고지.', type: ['tiger', 'snake', 'monkey' ] },
+    ]
+  },
+  {
+    q: '18. 내가 추구하는 연애관은? ',
+    a: [
+      { answer: 'a. 각자 할 것 하며, 평안하고 안정적인 연애가 좋다.', type: ['cow', 'dragon', 'chick', 'pig' ] },
+      { answer: 'b. 보고싶을 때 보고, 데이트도 많이 하고 꽁냥꽁냥하는 연애가 좋아.', type: ['sheep', 'mouse', 'rabbit', 'horse', 'dog'] },
+      { answer: 'c. 연애는 마음가는대로! 불타오르는 연애가 최고지.', type: ['tiger', 'snake', 'monkey' ] },
+    ]
+  },
+  {
+    q: '19. 내가 추구하는 연애관은? ',
+    a: [
+      { answer: 'a. 각자 할 것 하며, 평안하고 안정적인 연애가 좋다.', type: ['cow', 'dragon', 'chick', 'pig' ] },
+      { answer: 'b. 보고싶을 때 보고, 데이트도 많이 하고 꽁냥꽁냥하는 연애가 좋아.', type: ['sheep', 'mouse', 'rabbit', 'horse', 'dog'] },
+      { answer: 'c. 연애는 마음가는대로! 불타오르는 연애가 최고지.', type: ['tiger', 'snake', 'monkey' ] },
+    ]
+  },
+  {
+    q: '20. 내가 추구하는 연애관은? ',
+    a: [
+      { answer: 'a. 각자 할 것 하며, 평안하고 안정적인 연애가 좋다.', type: ['cow', 'dragon', 'chick', 'pig' ] },
+      { answer: 'b. 보고싶을 때 보고, 데이트도 많이 하고 꽁냥꽁냥하는 연애가 좋아.', type: ['sheep', 'mouse', 'rabbit', 'horse', 'dog'] },
+      { answer: 'c. 연애는 마음가는대로! 불타오르는 연애가 최고지.', type: ['tiger', 'snake', 'monkey' ] },
+    ]
+  },
+  {
+    q: '21. 내가 추구하는 연애관은? ',
+    a: [
+      { answer: 'a. 각자 할 것 하며, 평안하고 안정적인 연애가 좋다.', type: ['cow', 'dragon', 'chick', 'pig' ] },
+      { answer: 'b. 보고싶을 때 보고, 데이트도 많이 하고 꽁냥꽁냥하는 연애가 좋아.', type: ['sheep', 'mouse', 'rabbit', 'horse', 'dog'] },
+      { answer: 'c. 연애는 마음가는대로! 불타오르는 연애가 최고지.', type: ['tiger', 'snake', 'monkey' ] },
+    ]
+  },
+  {
+    q: '22. 내가 추구하는 연애관은? ',
+    a: [
+      { answer: 'a. 각자 할 것 하며, 평안하고 안정적인 연애가 좋다.', type: ['cow', 'dragon', 'chick', 'pig' ] },
+      { answer: 'b. 보고싶을 때 보고, 데이트도 많이 하고 꽁냥꽁냥하는 연애가 좋아.', type: ['sheep', 'mouse', 'rabbit', 'horse', 'dog'] },
+      { answer: 'c. 연애는 마음가는대로! 불타오르는 연애가 최고지.', type: ['tiger', 'snake', 'monkey' ] },
+    ]
   }
 ]
 
