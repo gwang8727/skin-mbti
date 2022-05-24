@@ -126,7 +126,7 @@ const qnaList = [
     q: '16. 얼굴에 주름이 있나요? ',
     a: [
       { answer: '1. 없다 웃거나 찡그리거나 눈썹을 치켜올릴 경우에도 없다.', type: ['cow', 'dragon', 'chick', 'pig' ] },
-      { answer: '2. 웃거나 찡그리거나 눈썹을 치켜올릴때에 없다.', type: ['sheep', 'mouse', 'rabbit', 'horse', 'dog'] },
+      { answer: '2. 웃거나 찡그리거나 눈썹을 치켜올릴때에 있다.', type: ['sheep', 'mouse', 'rabbit', 'horse', 'dog'] },
       { answer: '3. 있다 얼굴을 움직이거나 움직임이 없는 안정된 상태에서도 약간 있다', type: ['tiger', 'snake', 'monkey' ] },
       { answer: '4. 웃거나 찡그리거나 눈썹을 치켜올리지 않아도 주름이 있다', type: ['tiger', 'snake', 'monkey' ] },
     ]
