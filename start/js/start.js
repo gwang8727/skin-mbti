@@ -1,56 +1,35 @@
 const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
 const result = document.querySelector("#result");
-const endPoint = 12;
+const endPoint = 20;
 //endpoint 값 바꾸기//
-const select = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+const select = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 function calResult(){
-  var pointArray = [
-      {name : 'ORPT', value:0, key:0},
-      {name : 'ORNT', value:0, key:1},
-      {name : 'ORNW', value:0, key:2},
-      {name : 'ORPW', value:0, key:3},
-      {name : 'DSNT', value:0, key:4},
-      {name : 'DSPW', value:0, key:5},
-      {name : 'DSNW', value:0, key:6},
-      {name : 'DSPT', value:0, key:7},
-      {name : 'DRPW', value:0, key:8},
-      {name : 'DRNW', value:0, key:9},
-      {name : 'DRPT', value:0, key:10},
-      {name : 'DRNT', value:0, key:11},
-      {name : 'OSPT', value:0, key:12},
-      {name : 'OSPW', value:0, key:13},
-      {name : 'OSNW', value:0, key:14},
-      {name : 'OSNT', value:0, key:15},
-  ]
-  for(let i = 0; i<endPoint;i++){
-    var target = qnaList[i].a[select[i]];
-    //selet에 담긴 값은 data.js에 있는 answer 각각 a는  0,1,2 에 해당//
-    for (var j = 0; j < target.type.length; j++) {
-      //j는 data.js 파일의 type에 대해 반복문//
-      for (var k = 0; k < pointArray.length; k++) {
-        //포인트 어레이 배열과 type의 이름이 같으면 포인트 어레이의 value 값 증가하는데 가장 큰 값이 결과값이겠죠//
-        if(target.type[j] === pointArray[k].name){
-          pointArray[k].value +=1;
-        }
-      }
-    }
-  }
-  var resultArray = pointArray.sort(function (a,b){
-    if (a.value>b.value) {
-      return -1;
-    }
-    if (a.value<b.value) {
-      return 1;
-
-    }
-    return 0;
-  })
-  console.log(resultArray);
-  let resultWorld = resultArray[0].key;
-  return resultworld;
+  console.log(select);
+  var result =  select.indexOf(Math.max(...select));
+  //indexof 는 index 값 반환 MAth 최댓값 반환 ...은 전개 구문 선택한 배열 펼치게 함//
+  return result;
 }
+function setResult() {
+    let point = calResult();
+    //point를 이용하여 result 값 저장
+    const resultName = document.querySelector('.resultname');
+    resultName.innerHTML = infoList[point].name;
+    //아래 코드는 이미지 연결 코드//
+
+    var resultImg = document.createElement('img');
+    const imgDiv = document.querySelector('#resultImg');
+    var imgURL = 'img/image-' + point + '.png'
+    resultImg.src = imgURL;
+    resultImg.alt = point;
+    resultImg.classList.add('img-fluid');
+    imgDiv.appendChild(resultImg);
+
+    const resultDesc = document.querySelector('.resultDesc');
+    resultDesc.innerHTML = infoList[point].desc;
+}
+
 function goResult(){
   qna.style.WebkitAnimation = "fadeOut 1s";
   qna.style.animation = "fadeOut 1s";
@@ -61,9 +40,7 @@ function goResult(){
       qna.style.display = "none";
       result.style.display = "block"
     }, 450)})
-
-    console.log(select);
-    calResult();
+    setResult();
 
   }
 
@@ -78,6 +55,7 @@ function addAnswer(answerText,qIdx,idx){
 
   a.appendChild(answer);
   answer.innerHTML = answerText;
+
   answer.addEventListener("click", function(){
     var children = document.querySelectorAll('.answerList');
     for(let i = 0; i < children.length; i++){
@@ -88,11 +66,13 @@ function addAnswer(answerText,qIdx,idx){
     }
 
     setTimeout(() => {
+      //qnalist에서 몇번째 질문인지 알아야하니까 qIdx 넣고 a에서 선택한 질문 idx 넣//
       var target = qnaList[qIdx].a[idx].type;
       //selet에 담긴 값은 data.js에 있는 answer 각각 a는  0,1,2 에 해당//
       for (var i = 0; i < target.length; i++){
-        select[type[i]] += 1;
+        select[target[i]] += 1;
       }
+      //위 반복문을 지나 해당하는 타입에 value 값이 1씩 증가//
 
       for(let i = 0; i < children.length; i++){
         children[i].style.display = 'none';
@@ -109,6 +89,7 @@ function goNext(qIdx){
   var q = document.querySelector('.qBox');
   q.innerHTML = qnaList[qIdx].q;
   for(let i in qnaList[qIdx].a){
+    //첫번째 질문에 대한 첫번째 대답
     addAnswer(qnaList[qIdx].a[i].answer,qIdx,i);
   }
   var status = document.querySelector('.statusBar');
