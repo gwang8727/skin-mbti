@@ -1,112 +1,68 @@
-const main = document.querySelector("#main");
-const qna = document.querySelector("#qna");
-const result = document.querySelector("#result");
-const endPoint = 20;
-//endpoint 값 바꾸기//
-const select = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
 
-function calResult(){
-  console.log(select);
-  var result =  select.indexOf(Math.max(...select));
-  //indexof 는 index 값 반환 MAth 최댓값 반환 ...은 전개 구문 선택한 배열 펼치게 함//
-  return result;
-}
-function setResult() {
-    let point = calResult();
-    //point를 이용하여 result 값 저장
-    const resultName = document.querySelector('.resultname');
-    resultName.innerHTML = infoList[point].name;
-    //아래 코드는 이미지 연결 코드//
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="gwang">
+  <meta name="keywords" content="skin mbti">
+  <meta name="description" content="skin mbti">
+  <!--favicon-->
+  <link rel="shortcut icon" href="img/227_1.jpg">
+  <title>skin mbti</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/default.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/qna.css">
+  <link rel="stylesheet" href="./css/animation.css">
+  <link rel="stylesheet" href="./css/result.css">
+</head>
 
-    var resultImg = document.createElement('img');
-    const imgDiv = document.querySelector('#resultImg');
-    var imgURL = 'img/image-' + point + '.png'
-    resultImg.src = imgURL;
-    resultImg.alt = point;
-    resultImg.classList.add('img-fluid');
-    imgDiv.appendChild(resultImg);
+<body>
+  <div class="container">
+    <section id="main" class="mx-auto my-5 py-5 px-3">
+      <h1>skin test</h1>
+      <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+        <img src="./img/url.png" alt="mainImage" class="img-fluid">
+      </div>
+      <p>
+        자신에게 맞는 피부 유형을 알아보세요.<br>
+        아래 시작하기 버튼을 눌러 시작해주세요.
+      </p>
+      <button type="button" class="btn btn-outline-danger mt-3" onclick="js:begin()">시작하기</button>
+    </section>
+    <section id="qna">
+      <div class="status mx-auto mt-5">
+        <div class="statusBar">
 
-    const resultDesc = document.querySelector('.resultDesc');
-    resultDesc.innerHTML = infoList[point].desc;
-}
+        </div>
+      </div>
+      <div class="qBox my-5 py-3 mx-auto">
 
-function goResult(){
-  qna.style.WebkitAnimation = "fadeOut 1s";
-  qna.style.animation = "fadeOut 1s";
-  setTimeout(() => {
-    result.style.WebkitAnimation = "fadeIn 1s";
-    result.style.animation = "fadeIn 1s";
-    setTimeout(() => {
-      qna.style.display = "none";
-      result.style.display = "block"
-    }, 450)})
-    setResult();
+      </div>
+      <div class="answerBox">
 
-  }
+      </div>
+    </section>
+    <section id="result" class="mx-auto my-5 py-5 px-3">
+      <h1>당신의 검사 결과는?!</h1>
+      <div class="resultname">
 
-function addAnswer(answerText,qIdx,idx){
-  var a = document.querySelector('.answerBox');
-  var answer = document.createElement('button');
-  answer.classList.add('answerList');
-  answer.classList.add('my-3');
-  answer.classList.add('py-3');
-  answer.classList.add('mx-auto');
-  answer.classList.add('fadeIn');
+      </div>
+      <div id = "resultImg" class="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
 
-  a.appendChild(answer);
-  answer.innerHTML = answerText;
+      </div>
+      <div class="resultDesc">
 
-  answer.addEventListener("click", function(){
-    var children = document.querySelectorAll('.answerList');
-    for(let i = 0; i < children.length; i++){
-      children[i].disabled = true;
-      children[i].style.WebkitAnimation = "fadeOut 0.5s";
-      children[i].style.animation = "fadeOut 0.5s";
+      </div>
+    </section>
+    <script src="./js/data.js" charset="utf-8"></script>
+    <script src="./js/start.js" charset="utf-8"></script>
+  </div>
 
-    }
+</body>
 
-    setTimeout(() => {
-      //qnalist에서 몇번째 질문인지 알아야하니까 qIdx 넣고 a에서 선택한 질문 idx 넣//
-      var target = qnaList[qIdx].a[idx].type;
-      //selet에 담긴 값은 data.js에 있는 answer 각각 a는  0,1,2 에 해당//
-      for (var i = 0; i < target.length; i++){
-        select[target[i]] += 1;
-      }
-      //위 반복문을 지나 해당하는 타입에 value 값이 1씩 증가//
-
-      for(let i = 0; i < children.length; i++){
-        children[i].style.display = 'none';
-      }
-      goNext(++qIdx);
-    }, 450)
-  },false);
-}
-function goNext(qIdx){
-  if(qIdx === endPoint){
-    goResult();
-    return;
-  }
-  var q = document.querySelector('.qBox');
-  q.innerHTML = qnaList[qIdx].q;
-  for(let i in qnaList[qIdx].a){
-    //첫번째 질문에 대한 첫번째 대답
-    addAnswer(qnaList[qIdx].a[i].answer,qIdx,i);
-  }
-  var status = document.querySelector('.statusBar');
-  status.style.width = (100/endPoint)*(qIdx+1) +'%';
-}
-
-function begin(){
-  main.style.WebkitAnimation = "fadeOut 1s";
-  main.style.animation = "fadeOut 1s";
-  setTimeout(() => {
-    qna.style.WebkitAnimation = "fadeIn 1s";
-    qna.style.animation = "fadeIn 1s";
-    setTimeout(() => {
-      main.style.display = "none";
-      qna.style.display = "block"
-    }, 450)
-    let qIdx = 0;
-    goNext(qIdx);
-  }, 450);
-}
+</html>
