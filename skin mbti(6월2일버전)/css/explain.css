@@ -1,0 +1,11 @@
+#explain{
+  display : none;
+  background-color: white;
+  width: 80%;
+  text-align : center;
+  border-radius: 20px;
+}
+
+.resultcontext{
+  font-size: 20px;
+}
